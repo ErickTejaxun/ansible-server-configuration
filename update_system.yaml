@@ -10,5 +10,17 @@
       - https://www.googleapis.com/auth/compute
 
   tasks:
-    - name: kubectl delete deployment 
-      command: ~/despliegue/google-cloud-sdk/bin/kubectl set image deployment/app-grupo14 microservicio-usuario-image=gcr.io/practica3-sa/microservicio-usuario-image:latest
+    - name: kubectl update usuario
+      command: ~/despliegue/google-cloud-sdk/bin/kubectl set image deployment/microservicio-usuario microservicio-usuario-image=gcr.io/practica3-sa/microservicio-usuario-image:latest
+
+    - name: kubectl update producto 
+      command: ~/despliegue/google-cloud-sdk/bin/kubectl set image deployment/microservicio-producto microservicio-producto-image=gcr.io/practica3-sa/microservicio-producto-image:latest
+
+    - name: kubectl update carrito 
+      command: ~/despliegue/google-cloud-sdk/bin/kubectl set image deployment/microservicio-carrito microservicio-carrito-image=gcr.io/practica3-sa/microservicio-carrito-image:latest
+
+    - name: kubectl update compra 
+      command: ~/despliegue/google-cloud-sdk/bin/kubectl set image deployment/microservicio-compra microservicio-compra-image=gcr.io/practica3-sa/microservicio-compra-image:latest
+
+    - name: kubectl update subasta 
+      command: ~/despliegue/google-cloud-sdk/bin/kubectl set image deployment/microservicio-subasta microservicio-subasta-image=gcr.io/practica3-sa/microservicio-subasta-image:latest
