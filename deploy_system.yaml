@@ -16,8 +16,8 @@
     - name: kubectl create deployment
       command: ~/despliegue/google-cloud-sdk/bin/kubectl create deployment app-grupo14 --image=gcr.io/practica3-sa/microservicio-usuario-image:latest
     
-    - name: kubectl autoscale
-      command: ~/despliegue/google-cloud-sdk/bin/kubectl kubectl autoscale deployment app-grupo14 --cpu-percent=80 --min=1 --max=4 
+      #- name: kubectl autoscale
+      #command: ~/despliegue/google-cloud-sdk/bin/kubectl kubectl autoscale deployment app-grupo14 --cpu-percent=80 --min=1 --max=4 
 
     - name: kubectl get services
       command: ~/despliegue/google-cloud-sdk/bin/kubectl get services
