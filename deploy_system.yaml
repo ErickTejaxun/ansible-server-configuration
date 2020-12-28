@@ -12,42 +12,42 @@
   tasks:
     #Micro servicio usuario
     - name: kubectl delete deployment 
-      command: ~/despliegue/google-cloud-sdk/bin/kubectl delete deployment microservicio-usuario-grupo14 
+      command: ~/despliegue/google-cloud-sdk/bin/kubectl delete deployment microservicio-usuario 
 
     - name: kubectl create deployment
-      command: ~/despliegue/google-cloud-sdk/bin/kubectl create deployment microservicio-usuario-grupo14 --image=gcr.io/practica3-sa/microservicio-usuario-image:latest
+      command: ~/despliegue/google-cloud-sdk/bin/kubectl create deployment microservicio-usuario --image=gcr.io/practica3-sa/microservicio-usuario-image:latest
     
 
     #Micro servicio producto
     - name: kubectl delete deployment 
-      command: ~/despliegue/google-cloud-sdk/bin/kubectl delete deployment microservicio-producto-grupo14
+      command: ~/despliegue/google-cloud-sdk/bin/kubectl delete deployment microservicio-producto
 
     - name: kubectl create deployment
-      command: ~/despliegue/google-cloud-sdk/bin/kubectl create deployment microservicio-producto-grupo14 --image=gcr.io/practica3-sa/microservicio-producto-image:latest
+      command: ~/despliegue/google-cloud-sdk/bin/kubectl create deployment microservicio-producto --image=gcr.io/practica3-sa/microservicio-producto-image:latest
   
       
     #Micro servicio carrito
     - name: kubectl delete deployment 
-      command: ~/despliegue/google-cloud-sdk/bin/kubectl delete deployment microservicio-carrito-grupo14
+      command: ~/despliegue/google-cloud-sdk/bin/kubectl delete deployment microservicio-carrito
 
     - name: kubectl create deployment
-      command: ~/despliegue/google-cloud-sdk/bin/kubectl create deployment microservicio-carrito-grupo14 --image=gcr.io/practica3-sa/microservicio-carrito-image:latest
+      command: ~/despliegue/google-cloud-sdk/bin/kubectl create deployment microservicio-carrito --image=gcr.io/practica3-sa/microservicio-carrito-image:latest
   
 
     #Micro servicio compra
     - name: kubectl delete deployment 
-      command: ~/despliegue/google-cloud-sdk/bin/kubectl delete deployment microservicio-compra-grupo14
+      command: ~/despliegue/google-cloud-sdk/bin/kubectl delete deployment microservicio-compra
 
     - name: kubectl create deployment
-      command: ~/despliegue/google-cloud-sdk/bin/kubectl create deployment microservicio-compra-grupo14 --image=gcr.io/practica3-sa/microservicio-compra-image:latest
+      command: ~/despliegue/google-cloud-sdk/bin/kubectl create deployment microservicio-compra --image=gcr.io/practica3-sa/microservicio-compra-image:latest
   
 
     #Micro servicio subasta
     - name: kubectl delete deployment 
-      command: ~/despliegue/google-cloud-sdk/bin/kubectl delete deployment microservicio-subasta-grupo14
+      command: ~/despliegue/google-cloud-sdk/bin/kubectl delete deployment microservicio-subasta
 
     - name: kubectl create deployment
-      command: ~/despliegue/google-cloud-sdk/bin/kubectl create deployment microservicio-subasta-grupo14 --image=gcr.io/practica3-sa/microservicio-subasta-image:latest
+      command: ~/despliegue/google-cloud-sdk/bin/kubectl create deployment microservicio-subasta --image=gcr.io/practica3-sa/microservicio-subasta-image:latest
   
     - name: kubectl get services
       command: ~/despliegue/google-cloud-sdk/bin/kubectl get services
