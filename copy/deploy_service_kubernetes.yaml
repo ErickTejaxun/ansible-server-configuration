@@ -1,0 +1,33 @@
+- name: Configurar el servidor de produccion
+  hosts: server-nodo-trabajo
+  gather_facts: no
+
+  vars:
+    service_account_file: ~/credentials.json
+    project: practica3-sa
+    auth_kind: serviceaccount
+    scopes:
+      - https://www.googleapis.com/auth/compute
+
+  tasks:
+  - name: create a cluster
+    google.cloud.gcp_container_cluster:
+      name: cluster-grupo14 
+      description: Cluster para el backend del sistema del proyecto de SA
+      initial_node_count: 2
+      addons_config:
+        horizontal_pod_autoscaling:
+          disabled: no
+        http_load_balancing:
+          disabled: no
+      master_auth:
+        username: cluster_admin
+        password: Guatemala_grupo14_2020
+      node_config:
+        machine_type: g1-small
+        disk_size_gb: 30
+      location: us-west3-a
+      project: practica3-sa
+      auth_kind: serviceaccount
+      service_account_file: "{{service_account_file}}"
+      state: present

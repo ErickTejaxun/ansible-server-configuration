@@ -1,0 +1,25 @@
+- name: Configurar el servidor de produccion
+  hosts: "servidor-nodo-trabajo2"
+  gather_facts: no
+
+  vars:
+    service_account_file: ~/credentials.json
+    project: practica3-sa
+    auth_kind: serviceaccount
+    scopes:
+      - https://www.googleapis.com/auth/compute
+
+  tasks:
+    - name: kubectl delete deployment 
+      command: ~/despliegue/google-cloud-sdk/bin/kubectl delete deployment app-grupo14
+
+    - name: kubectl create deployment
+      command: ~/despliegue/google-cloud-sdk/bin/kubectl create deployment app-grupo14 --image=gcr.io/practica3-sa/microservicio-usuario-image:latest
+    
+    - name: kubectl autoscale
+      command: ~/despliegue/google-cloud-sdk/bin/kubectl kubectl autoscale deployment app-grupo14 --cpu-percent=80 --min=1 --max=4 
+
+    - name: kubectl get services
+      command: ~/despliegue/google-cloud-sdk/bin/kubectl get services
+
+

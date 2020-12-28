@@ -1,0 +1,5 @@
+[local]
+localhost ansible_connection=local
+
+[gce_instances]
+servidor-nodo-trabajo2 ansible_user=g2616501300304
