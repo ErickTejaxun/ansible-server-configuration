@@ -52,11 +52,11 @@
 
 
     #Micro servicio esesbb
-    - name: kubectl delete deployment 
-      command: ~/despliegue/google-cloud-sdk/bin/kubectl delete deployment esb-deploy
+    #- name: kubectl delete deployment 
+    #  command: ~/despliegue/google-cloud-sdk/bin/kubectl delete deployment esb-deploy
 
-    - name: kubectl create deployment
-      command: ~/despliegue/google-cloud-sdk/bin/kubectl create deployment esb-deploy --image=gcr.io/practica3-sa/imagen-esb-container:latest      
+    #- name: kubectl create deployment
+    #  command: ~/despliegue/google-cloud-sdk/bin/kubectl create deployment esb-deploy --image=gcr.io/practica3-sa/imagen-esb-container:latest      
   
     - name: kubectl get services
       command: ~/despliegue/google-cloud-sdk/bin/kubectl get services
