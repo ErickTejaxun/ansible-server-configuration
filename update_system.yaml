@@ -24,3 +24,9 @@
 
     - name: kubectl update subasta 
       command: ~/despliegue/google-cloud-sdk/bin/kubectl set image deployment/microservicio-subasta microservicio-subasta-image=gcr.io/practica3-sa/microservicio-subasta-image:latest
+
+    - name: kubectl update esb 
+      command: ~/despliegue/google-cloud-sdk/bin/kubectl set image deployment/esb imagen-esb-container=gcr.io/practica3-sa/imagen-esb-container:latest      
+
+
+#grupo14-sa-2020
