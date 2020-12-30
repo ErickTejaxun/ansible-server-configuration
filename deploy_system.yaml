@@ -56,7 +56,7 @@
       command: ~/despliegue/google-cloud-sdk/bin/kubectl delete deployment esb
 
     - name: kubectl create deployment
-      command: ~/despliegue/google-cloud-sdk/bin/kubectl create deployment magen-esb-container --image=gcr.io/practica3-sa/magen-esb-container:latest      
+      command: ~/despliegue/google-cloud-sdk/bin/kubectl create deployment esb --image=gcr.io/practica3-sa/imagen-esb-container:latest      
   
     - name: kubectl get services
       command: ~/despliegue/google-cloud-sdk/bin/kubectl get services
